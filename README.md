@@ -51,5 +51,8 @@ Artist's AI Assistant is an interactive web application designed to help artists
 ## Contributing
 Contributions to the Artist's AI Assistant project are welcome. Please feel free to submit pull requests or open issues for bugs and feature requests.
 
+## Cool Note
+This entire project was created using Replit Agents (beta)
+
 ## License
 [MIT License](LICENSE)
