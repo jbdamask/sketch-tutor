@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio - Artist's AI Assistant{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h2 class="text-3xl font-bold mb-6">Your Drawing Portfolio</h2>
+    <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for drawing in drawings %}
+        <div class="portfolio-item bg-white shadow-md rounded-lg overflow-hidden">
+            <h3 class="text-xl font-semibold bg-blue-500 text-white p-4">{{ drawing.subject }}</h3>
+            <div class="p-4">
+                <div class="mb-4">
+                    <p class="text-lg font-medium mb-2">AI-generated sketch:</p>
+                    <img src="{{ drawing.ai_sketch_url }}" alt="AI-generated sketch of {{ drawing.subject }}" class="w-full h-48 object-cover rounded">
+                </div>
+                <div>
+                    <p class="text-lg font-medium mb-2">Your drawing:</p>
+                    <img src="{{ drawing.user_drawing_url }}" alt="User drawing of {{ drawing.subject }}" class="w-full h-48 object-cover rounded">
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

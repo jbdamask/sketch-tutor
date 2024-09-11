@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h2 class="text-3xl font-bold mb-6">Improve Your Drawing Skills</h2>
+    <div class="mb-6">
+        <input type="text" id="subject-input" placeholder="Enter drawing subject" class="w-full p-2 border border-gray-300 rounded">
+        <button id="generate-btn" class="mt-2 bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded shadow-lg">Generate AI Sketch</button>
+    </div>
+    <div id="drawing-area" class="flex flex-col sm:flex-row justify-between mb-6 space-y-4 sm:space-y-0 sm:space-x-4">
+        <div class="w-full sm:w-1/2">
+            <h3 class="text-xl font-semibold mb-2">AI-Generated Sketch</h3>
+            <div id="ai-sketch" class="border border-gray-300 rounded p-2 h-64 flex items-center justify-center bg-gray-100"></div>
+        </div>
+        <div class="w-full sm:w-1/2">
+            <h3 class="text-xl font-semibold mb-2">Your Drawing</h3>
+            <div class="relative">
+                <div id="user-drawing" class="border border-gray-300 rounded p-2 h-64 flex items-center justify-center bg-gray-100"></div>
+                <button id="rotate-btn" class="absolute top-2 right-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                </button>
+            </div>
+            <input type="file" id="file-input" accept="image/*" class="hidden">
+            <button id="upload-btn" class="mt-2 bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded shadow-lg">Upload Your Drawing</button>
+        </div>
+    </div>
+    <div class="flex justify-center mb-6 space-x-4">
+        <button id="get-feedback-btn" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded shadow-lg">Get Feedback</button>
+        <button id="favorite-btn" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded shadow-lg">
+            <i class="fas fa-heart text-red-500"></i> Add to Favorites
+        </button>
+    </div>
+    <div id="feedback" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"></div>
+</div>
+{% endblock %}
